@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-class Tarea {
+class Task {
   id = '';
   description = '';
   completeAt = null;
@@ -12,4 +12,4 @@ class Tarea {
   }
 }
 
-export default Tarea;
+export default Task;
