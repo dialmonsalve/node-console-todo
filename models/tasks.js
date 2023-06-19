@@ -46,7 +46,7 @@ class Tasks {
         console.log(`${green(index + 1., '-', white(description), white('::'), completeAt)} `);
         return
       }
-      console.log(`${red(index + 1., '-', white(description), white('::'), 'Pendiente')}`);
+      console.log(`${red(index + 1., '-', white(description), white('::'), 'Pending')}`);
     })
   }
 
@@ -60,7 +60,7 @@ class Tasks {
       }
 
       if (!complete && completeAt === null) {
-        console.log(`${red(index + 1., '-', white(description), white('::'), 'Pendiente')}`);
+        console.log(`${red(index + 1., '-', white(description), white('::'), 'Pending')}`);
       }
     })
   }
