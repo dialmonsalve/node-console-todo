@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const file = './db/tareas.json';
+const file = './db/tasks.json';
 
 const saveTask = (data) => {
 
