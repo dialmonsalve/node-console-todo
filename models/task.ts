@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 
 class Task {
-  id = '';
-  description = '';
-  completeAt = null;
+  public id:string;
+  public description: string;
+  public completeAt : string | null;
 
-  constructor(description){
+  constructor(description:string){
     this.id = uuidv4();
     this.description = description;
     this.completeAt = null

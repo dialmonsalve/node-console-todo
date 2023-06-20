@@ -1,8 +1,9 @@
 import fs from 'fs';
+import { ITask } from '../interfaces/interfaces.js';
 
 const file = './db/tasks.json';
 
-const saveTask = (data) => {
+const saveTask = (data:ITask[]) => {
 
   fs.writeFileSync(file, JSON.stringify(data))
 

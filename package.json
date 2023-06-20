@@ -2,7 +2,7 @@
   "name": "02-node-todo",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,9 @@
     "colors": "^1.4.0",
     "inquirer": "^9.2.7",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/uuid": "^9.0.2"
   }
 }

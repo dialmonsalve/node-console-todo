@@ -1,6 +1,7 @@
 
 import colors from 'colors';
 import inquirer from 'inquirer';
+import { ITask } from '../interfaces/interfaces.js';
 
 const { rainbow, green, cyan } = colors
 
@@ -61,13 +62,13 @@ const pausa = async () => {
   }])
 }
 
-const readInput = async (message) => {
+const readInput = async (message:string) => {
   const question = [
     {
       type: 'input',
       name: 'description',
       message,
-      validate(value) {
+      validate(value:string) {
         if (value.length === 0) {
           return 'Please inserte a value';
         }
@@ -81,14 +82,14 @@ const readInput = async (message) => {
   return description;
 }
 
-const listTaskDelete = async (tareas = []) => {
+const listTaskDelete = async (tasks:ITask[]) => {
 
-  const choices = tareas.map((tarea, i) => {
+  const choices = tasks.map((task, i) => {
     const idx = `${i + 1}.`.green;
 
     return {
-      value: tarea.id,
-      name: `${idx} ${tarea.description}`
+      value: task.id,
+      name: `${idx} ${task.description}`
     };
   });
 
@@ -111,7 +112,7 @@ const listTaskDelete = async (tareas = []) => {
   return id
 }
 
-const confirm = async (message) => {
+const confirm = async (message:string) => {
 
   const questions = [
     {
@@ -126,15 +127,15 @@ const confirm = async (message) => {
   return ok
 }
 
-const showCheckList = async (tareas = []) => {
+const showCheckList = async (tasks:ITask[]) => {
 
-  const choices = tareas.map((tarea, i) => {
+  const choices = tasks.map((task, i) => {
     const idx = `${i + 1}.`.green;
 
     return {
-      value: tarea.id,
-      name: `${idx} ${tarea.description}`,
-      checked: (tarea.completeAt) ? true : false
+      value: task.id,
+      name: `${idx} ${task.description}`,
+      checked: (task.completeAt) ? true : false
     };
   });
 
@@ -151,8 +152,6 @@ const showCheckList = async (tareas = []) => {
 
   return ids
 }
-
-
 
 export {
   inquirerMenu,
